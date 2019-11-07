@@ -1,0 +1,14 @@
+C:\Users\Dell\DoraTourist\DoraTourist.API\bin\Debug\netcoreapp2.2\DoraTourist.API.deps.json
+C:\Users\Dell\DoraTourist\DoraTourist.API\bin\Debug\netcoreapp2.2\DoraTourist.API.runtimeconfig.json
+C:\Users\Dell\DoraTourist\DoraTourist.API\bin\Debug\netcoreapp2.2\DoraTourist.API.runtimeconfig.dev.json
+C:\Users\Dell\DoraTourist\DoraTourist.API\bin\Debug\netcoreapp2.2\DoraTourist.API.dll
+C:\Users\Dell\DoraTourist\DoraTourist.API\bin\Debug\netcoreapp2.2\DoraTourist.API.pdb
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.csprojAssemblyReference.cache
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.csproj.CoreCompileInputs.cache
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.RazorAssemblyInfo.cache
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.RazorAssemblyInfo.cs
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.AssemblyInfoInputs.cache
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.AssemblyInfo.cs
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.RazorTargetAssemblyInfo.cache
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.dll
+C:\Users\Dell\DoraTourist\DoraTourist.API\obj\Debug\netcoreapp2.2\DoraTourist.API.pdb
