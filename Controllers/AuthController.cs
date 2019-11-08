@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using DoraTourist.API.Data;
 using DoraTourist.API.Dtos;
 using DoraTourist.API.Models;
@@ -19,10 +20,12 @@ namespace DoraTourist.API.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
-        public AuthController(IAuthRepository repo, IConfiguration config) 
+        private readonly IMapper _mapper;
+        public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper) 
         {
                 _repo = repo;
                 _config = config;
+                _mapper = mapper;
         }
 
         [HttpPost("register")]
@@ -76,6 +79,7 @@ namespace DoraTourist.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
+            var user = _mapper.Map<UserForListDto>(userFromRepo);
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
             });
