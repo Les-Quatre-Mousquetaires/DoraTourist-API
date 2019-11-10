@@ -10,15 +10,31 @@ using Microsoft.Extensions.Logging;
 
 namespace DoraTourist.API
 {
-    public class Program
+    // public class Program
+    // {
+    //     public static void Main(string[] args)
+    //     {
+    //         CreateWebHostBuilder(args).Build().Run();
+    //     }
+
+    //     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    //         WebHost.CreateDefaultBuilder(args)
+    //             .UseStartup<Startup>();
+    // }
+    
+     public class Program
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseUrls("https://*:5001") // Using * to bind to all network interfaces
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            host.Run();
+        }
     }
 }
