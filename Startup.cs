@@ -34,7 +34,7 @@ namespace DoraTourist.API
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
-            
+            services.AddTransient<Seed>();
 
             services.AddCors();
 
@@ -42,7 +42,7 @@ namespace DoraTourist.API
 
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IBookingRepository, BookingRepository>();
-
+            services.AddScoped<LogUserActivity>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer
             (options => {
@@ -50,7 +50,7 @@ namespace DoraTourist.API
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                        .GetBytes(Configuration.GetSection("AppSetting:Token").Value)),
+                        .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                         ValidateIssuer = false,
                         ValidateAudience = false
                 };
@@ -58,7 +58,7 @@ namespace DoraTourist.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -82,11 +82,13 @@ namespace DoraTourist.API
                 // app.UseHsts();
             }
 
+            // seeder.SeedHotels();
             app.UseHttpsRedirection();
-            app.UseMvc();
             app.UseAuthentication();
+            app.UseMvc();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-        
+            
+            
         }
     }
 }

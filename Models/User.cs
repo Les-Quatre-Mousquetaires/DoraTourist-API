@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace DoraTourist.API.Models
 {
     public class User
@@ -8,6 +10,6 @@ namespace DoraTourist.API.Models
         public byte[] PasswordSalt {get; set; }
         public double AccountBalance { get; set; } 
         public string EBankingNumber { get; set; }
-
+        public ICollection<Review> ReviewsSent { get; set; }
     }
 }

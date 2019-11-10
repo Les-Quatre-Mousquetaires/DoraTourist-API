@@ -10,7 +10,10 @@ namespace DoraTourist.API.Helpers
         {
             CreateMap<User, UserForListDto>();
             CreateMap<User, UserForDetailedDto>();
-            
+            CreateMap<Hotel, HotelForListDto>();
+            CreateMap<Hotel, HotelForDetailedDto>();
+
+            CreateMap<ReviewForCreationDto, Review>().ReverseMap();
         }
     }
 }

@@ -65,7 +65,7 @@ namespace DoraTourist.API.Controllers
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Username)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSetting:Token").Value));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -80,8 +80,10 @@ namespace DoraTourist.API.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             var user = _mapper.Map<UserForListDto>(userFromRepo);
+            
             return Ok(new {
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                user
             });
         }
     }
